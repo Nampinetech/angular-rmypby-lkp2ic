@@ -19,16 +19,16 @@
     [allowSelection]="true"
     [allowSorting]="true"
     [allowRowDragAndDrop]="true"
-    height="600"
-    (dataBound)="onDataBound($event)"
+    height="400"
     [enableHeaderFocus]="true"
     [enableHover]="false"
     [selectionSettings]="selectionSettings"
     [filterSettings]="filterSettings"
     [allowSorting]="true"
     [allowFiltering]="true"
-    [enableVirtualization]="true"
     [allowGrouping]="true"
+    allowPaging="true"
+    [pageSettings]="initialPage"
   >
     <e-columns>
       <e-column
@@ -54,15 +54,15 @@
         <ng-template #template let-data>
           <div>
             <div class="empimg">
-              <span
-                *ngIf="data.EmployeeImg === 'usermale'"
-                class="e-userimg sf-icon-Male"
-              >
+              <span *ngIf="data.EmployeeImg === 'usermale'">
+                <img
+                  src="https://img.icons8.com/office/30/000000/person-male-skin-type-1-2.png"
+                />
               </span>
-              <span
-                *ngIf="data.EmployeeImg === 'userfemale'"
-                class="e-userimg sf-icon-FeMale"
-              >
+              <span *ngIf="data.EmployeeImg === 'userfemale'">
+                <img
+                  src="https://img.icons8.com/office/30/000000/person-female-skin-type-1-2.png"
+                />
               </span>
             </div>
             <span id="Emptext">{{ data.Employees }}</span>
@@ -90,11 +90,6 @@
       >
         <ng-template #template let-data>
           <div class="loc">
-            <img
-              src="./assets/grid/images/Map.png"
-              class="e-image"
-              alt="{{ data.Location }}"
-            />
             <span id="locationtext">{{ data.Location }}</span>
           </div>
         </ng-template>
@@ -127,10 +122,6 @@
       >
         <ng-template #template let-data>
           <div class="trust">
-            <img
-              style="width: 31px; height: 24px"
-              src="./assets/grid/images/{{ data.Trustworthiness }}.png"
-            />
             <span id="Trusttext">{{ data.Trustworthiness }}</span>
           </div>
         </ng-template>
