@@ -115,63 +115,6 @@
         </ng-template>
       </e-column>
       <e-column
-        field="Trustworthiness"
-        [filter]="filter"
-        headerText="Trustworthiness"
-        width="200"
-      >
-        <ng-template #template let-data>
-          <div class="trust">
-            <span id="Trusttext">{{ data.Trustworthiness }}</span>
-          </div>
-        </ng-template>
-      </e-column>
-      <e-column
-        field="Rating"
-        [allowFiltering]="false"
-        headerText="Rating"
-        width="160"
-      >
-        <ng-template #template let-data>
-          <div class="rate">
-            <div class="rating">
-              <span
-                *ngFor="let i of item"
-                [ngClass]="{ checked: data.Rating >= i, star: true }"
-              ></span>
-            </div>
-          </div>
-        </ng-template>
-      </e-column>
-      <e-column
-        field="Software"
-        headerText="Software"
-        [allowSorting]="false"
-        [allowFiltering]="false"
-        width="180"
-      >
-        <ng-template #template let-data>
-          <div id="myProgress" class="pbar">
-            <div
-              id="myBar"
-              *ngIf="data.Status === 'Inactive'"
-              [style.width.%]="data.Software"
-              class="bar progressdisable"
-            >
-              <div id="label" class="barlabel">{{ data.Software }}%</div>
-            </div>
-            <div
-              id="myBar"
-              *ngIf="data.Status === 'Active'"
-              [style.width.%]="data.Software"
-              class="bar"
-            >
-              <div id="label" class="barlabel">{{ data.Software }}%</div>
-            </div>
-          </div>
-        </ng-template>
-      </e-column>
-      <e-column
         field="CurrentSalary"
         headerText="Current Salary"
         [filter]="filterSettings"
@@ -186,6 +129,63 @@
         width="240"
       ></e-column>
     </e-columns>
+    <e-column
+      field="Trustworthiness"
+      [filter]="filter"
+      headerText="Trustworthiness"
+      width="200"
+    >
+      <ng-template #template let-data>
+        <div class="trust">
+          <span id="Trusttext">{{ data.Trustworthiness }}</span>
+        </div>
+      </ng-template>
+    </e-column>
+    <e-column
+      field="Rating"
+      [allowFiltering]="false"
+      headerText="Rating"
+      width="160"
+    >
+      <ng-template #template let-data>
+        <div class="rate">
+          <div class="rating">
+            <span
+              *ngFor="let i of item"
+              [ngClass]="{ checked: data.Rating >= i, star: true }"
+            ></span>
+          </div>
+        </div>
+      </ng-template>
+    </e-column>
+    <e-column
+      field="Software"
+      headerText="Software"
+      [allowSorting]="false"
+      [allowFiltering]="false"
+      width="180"
+    >
+      <ng-template #template let-data>
+        <div id="myProgress" class="pbar">
+          <div
+            id="myBar"
+            *ngIf="data.Status === 'Inactive'"
+            [style.width.%]="data.Software"
+            class="bar progressdisable"
+          >
+            <div id="label" class="barlabel">{{ data.Software }}%</div>
+          </div>
+          <div
+            id="myBar"
+            *ngIf="data.Status === 'Active'"
+            [style.width.%]="data.Software"
+            class="bar"
+          >
+            <div id="label" class="barlabel">{{ data.Software }}%</div>
+          </div>
+        </div>
+      </ng-template>
+    </e-column>
     <e-aggregates>
       <e-aggregate>
         <e-columns>
