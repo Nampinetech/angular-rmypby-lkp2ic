@@ -11,20 +11,13 @@ import { CheckBox } from '@syncfusion/ej2-buttons';
 import { getData } from './data';
 import { ChangeEventArgs } from '@syncfusion/ej2-buttons/src/common/common';
 import { PageSettingsModel } from '@syncfusion/ej2-grids/src/grid/models/page-settings-model';
-import { L10n } from '@syncfusion/ej2-base/src/l10n';
-L10n.load({
-  'en-US': {
-    pager: {
-      currentPageInfo: '',
-      totalItemsInfo: '{1} to {2} of {0}',
-    },
-  },
-});
+import { AggregateService } from '@syncfusion/ej2-angular-grids';
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.css'],
-  providers: [FilterService, VirtualScrollService],
+  providers: [FilterService, VirtualScrollService, AggregateService],
 })
 export class AppComponent {
   public dReady: boolean = false;

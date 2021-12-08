@@ -186,5 +186,25 @@
         width="240"
       ></e-column>
     </e-columns>
+    <e-aggregates>
+      <e-aggregate>
+        <e-columns>
+          <e-column type="Sum" field="CurrentSalary" format="C2">
+            <ng-template #footerTemplate let-data
+              >Sum: {{ data.Sum }}</ng-template
+            >
+          </e-column>
+        </e-columns>
+      </e-aggregate>
+      <e-aggregate>
+        <e-columns>
+          <e-column type="Average" field="CurrentSalary" format="C2">
+            <ng-template #footerTemplate let-data
+              >Average: {{ data.Average }}</ng-template
+            >
+          </e-column>
+        </e-columns>
+      </e-aggregate>
+    </e-aggregates>
   </ejs-grid>
 </div>
